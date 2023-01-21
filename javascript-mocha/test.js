@@ -13,6 +13,11 @@ describe("example", async () => {
     it("passes test four", async () => {
         expect("world").to.eql("world" + "")
     })
+    
+    it("passed but is slow", async (done) => {
+        expect(1).to.eql(1)
+        setTimeout(done, 1000);
+    })
 
     it("fails test five", async () => {
         expect(42).to.eql(42 + 1)
