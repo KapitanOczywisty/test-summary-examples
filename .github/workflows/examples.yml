@@ -22,6 +22,9 @@ jobs:
           npm ci
           npm run test
         working-directory: javascript-mocha
+      - name: Show XML
+        run: cat javascript-mocha/results/**/*.xml
+        if: always()
       - name: Create test summary
         uses: test-summary/action@v1
         with:
